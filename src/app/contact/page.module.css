@@ -1,0 +1,163 @@
+.contactContainer {
+  composes: page-container from global;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactContainer h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contactForm {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.inputError {
+  border-color: var(--accent-color);
+  animation: shake 0.3s;
+}
+
+.errorMessage {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-2px); }
+  40%, 60% { transform: translateX(2px); }
+}
+
+.successMessage {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.successMessage h2 {
+  color: #2ecc71;
+  margin-bottom: 1rem;
+}
+
+.resetButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .contactContainer {
+    padding: 1rem;
+  }
+
+  .contactForm {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+} 
+
+/* Add these styles to your existing CSS */
+.ratingContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.ratingLabel {
+  position: relative;
+  cursor: pointer;
+}
+
+.ratingInput {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ratingIcon {
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ratingInput:checked + .ratingIcon {
+  background-color: var(--primary-color);
+  color: white;
+} 
